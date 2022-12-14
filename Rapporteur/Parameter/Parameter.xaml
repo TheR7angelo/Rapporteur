@@ -1,0 +1,76 @@
+﻿<mah:MetroWindow x:Class="Rapporteur.Parameter.Parameter"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        mc:Ignorable="d"
+        
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        
+        TitleCharacterCasing="Normal"
+        
+        Title="Paramètres" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0">
+            <Grid VerticalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="10"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+                
+                <Label Grid.Row="1" Grid.Column="1" Content="Pas :"/>
+                <TextBox x:Name="TextBoxStep" Grid.Row="1" Grid.Column="3" />
+                
+                <Label Grid.Row="3" Grid.Column="1" Content="Taille initial :"/>
+                <TextBox x:Name="TextBoxSize" Grid.Row="3" Grid.Column="3" />
+                
+                <Label Grid.Row="5" Grid.Column="1" Content="Rotation gauche :"/>
+                <TextBox x:Name="TextBoxLeftKey" Grid.Row="5" Grid.Column="3" IsReadOnly="True" PreviewKeyDown="TextBoxKey_OnKeyDown"/>
+                
+                <Label Grid.Row="7" Grid.Column="1" Content="Rotation droite :"/>
+                <TextBox x:Name="TextBoxRightKey" Grid.Row="7" Grid.Column="3" IsReadOnly="True" PreviewKeyDown="TextBoxKey_OnKeyDown"/>
+                
+                <Label Grid.Row="9" Grid.Column="1" Content="Agrandir :"/>
+                <TextBox x:Name="TextBoxUpKey" Grid.Row="9" Grid.Column="3" IsReadOnly="True" PreviewKeyDown="TextBoxKey_OnKeyDown"/>
+                
+                <Label Grid.Row="11" Grid.Column="1" Content="Réduire :"/>
+                <TextBox x:Name="TextBoxDownKey" Grid.Row="11" Grid.Column="3" IsReadOnly="True" PreviewKeyDown="TextBoxKey_OnKeyDown"/>
+                
+            </Grid>
+        </Grid>
+        
+        <Button Grid.Row="1" Content="Valider changement" Click="ButtonUpdateKey_OnClick"/>
+        
+        <StackPanel Grid.Row="2" Orientation="Vertical">
+            <Separator BorderBrush="Black" BorderThickness="3" Margin="7"/>
+            <Button Content="Quitter application" Click="ButtonQuit_OnClick"></Button>
+        </StackPanel>
+        
+    </Grid>
+</mah:MetroWindow>
